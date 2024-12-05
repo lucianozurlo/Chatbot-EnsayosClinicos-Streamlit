@@ -15,30 +15,30 @@ logging.basicConfig(
     force=True
 )
 
-# Definir la versión mínima requerida de Python
-MIN_REQUIRED_VERSION = (3, 10, 0)
+# Definir la versión requerida de Python
+REQUIRED_VERSION = (3, 10, 12)
 current_version = sys.version_info
 
 # Validar la versión de Python
-if current_version < MIN_REQUIRED_VERSION:
-    logging.warning(f"""
-**********************************************
-** Advertencia: Versión de Python no compatible **
-**********************************************
-Este chatbot requiere Python {MIN_REQUIRED_VERSION[0]}.{MIN_REQUIRED_VERSION[1]} o superior.
-La versión actual es Python {current_version.major}.{current_version.minor}.{current_version.micro}.
-Algunas funcionalidades pueden no funcionar correctamente.
-**********************************************
-""")
+if (current_version.major, current_version.minor, current_version.micro) != REQUIRED_VERSION:
+    logging.warning("""
+    **********************************************
+    ** Advertencia: Versión de Python no compatible **
+    **********************************************
+    Este chatbot está optimizado para Python 3.10.12.
+    La versión actual es Python {}.{}.{}.
+    Algunas funcionalidades pueden no funcionar correctamente.
+    **********************************************
+    """.format(current_version.major, current_version.minor, current_version.micro))
 else:
-    logging.info(f"""
-**********************************************
-** Versión de Python compatible **
-**********************************************
-Python {current_version.major}.{current_version.minor}.{current_version.micro} detectado correctamente.
-Todas las funcionalidades deberían operar sin problemas.
-**********************************************
-""")
+    logging.info("""
+    **********************************************
+    ** Versión de Python compatible **
+    **********************************************
+    Python 3.10.12 detectado correctamente.
+    Todas las funcionalidades deberían operar sin problemas.
+    **********************************************
+    """)
 
 # %% [markdown]
 # ### PASO 2: Instalación de Paquetes Necesarios
