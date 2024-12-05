@@ -530,7 +530,8 @@ def main():
         - Enfermedad de Pompe
         - Distrofia Miotónica
         - Enfermedad de almacenamiento de glucógeno
-        Por favor, escribe tu pregunta indicando claramente la enfermedad sobre la que deseas información.
+             
+        Por favor, escribí tu pregunta indicando claramente la enfermedad sobre la que deseas información.
     """)
 
     pregunta = st.text_input("Tu pregunta:")
